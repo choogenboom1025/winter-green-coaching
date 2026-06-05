@@ -182,7 +182,7 @@ img {
     /* Hero background — replace url() with your landscape photo */
     background-image: url('../images/hero.jpg');
     background-size: cover;
-    background-position: center top;
+    background-position: center 35%;
     background-color: #c8d8e8; /* fallback while image loads */
 }
 
