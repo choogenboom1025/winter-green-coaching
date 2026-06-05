@@ -70,13 +70,39 @@ img {
 /* Logo */
 .nav-logo {
     display: flex;
+    flex-direction: column;
     align-items: center;
     flex-shrink: 0;
+    gap: 2px;
 }
 
-.logo-img {
-    height: 50px;
+.logo-mark {
+    height: 42px;
     width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    gap: 2px;
+}
+
+.logo-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--navy);
+}
+
+.logo-coaching {
+    font-family: var(--font-body);
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    color: var(--steel);
 }
 
 /* Nav links */
