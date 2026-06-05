@@ -180,9 +180,9 @@ img {
     padding-bottom: 100px;
 
     /* Hero background — replace url() with your landscape photo */
-    background-image: url('images/hero.jpg');
+    background-image: url('../images/hero.jpg');
     background-size: cover;
-    background-position: center right;
+    background-position: center top;
     background-color: #c8d8e8; /* fallback while image loads */
 }
 
