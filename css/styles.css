@@ -353,6 +353,86 @@ img {
     letter-spacing: 0.05em;
 }
 
+/* ===================== REVIEWS ===================== */
+.reviews {
+    background: var(--off-white);
+    padding: 80px 40px;
+}
+
+.reviews-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.reviews-title {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 16px;
+}
+
+.reviews-subtitle {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--steel);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.review-card {
+    background: var(--white);
+    padding: 40px 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(29, 56, 92, 0.08);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.review-card:hover {
+    box-shadow: 0 8px 32px rgba(29, 56, 92, 0.15);
+    transform: translateY(-4px);
+}
+
+.review-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.star {
+    color: var(--olive);
+    font-size: 1.2rem;
+}
+
+.review-text {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--steel);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.review-author {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.05em;
+}
+
 /* ===================== CONTACT ===================== */
 .contact {
     background: var(--white);
@@ -565,6 +645,10 @@ img {
         gap: 40px;
     }
 
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .hero {
         height: 65vh;
     }
@@ -683,6 +767,27 @@ img {
     .hero {
         height: 50vh;
         padding-bottom: 60px;
+    }
+
+    .reviews {
+        padding: 60px 24px;
+    }
+
+    .reviews-header {
+        margin-bottom: 40px;
+    }
+
+    .reviews-title {
+        font-size: 1.8rem;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .review-card {
+        padding: 32px 24px;
     }
 }
 
