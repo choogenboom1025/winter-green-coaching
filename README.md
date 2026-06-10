@@ -31,6 +31,31 @@ Copilot will find the right file and make the changes for you. You can review th
 
 ---
 
+## 👁️ Preview Changes Before Publishing (IMPORTANT!)
+
+**ALWAYS preview your changes before publishing them live!** Here's how:
+
+### Step 1: Make Changes on the Staging Branch
+Tell Copilot: *"Make these changes on the staging branch, not the main branch"*
+
+Copilot will create or update files on the `staging` branch.
+
+### Step 2: View Your Preview Website
+After Copilot makes changes, go here to see what your website will look like:
+- **Preview URL:** https://choogenboom1025.github.io/winter-green-coaching/
+
+(Wait about 1-2 minutes for the preview to update after Copilot makes changes)
+
+### Step 3: Review and Approve
+- ✅ **Looks good?** Tell Copilot: *"Publish the staging changes to main"* (This makes them live!)
+- ❌ **Need changes?** Tell Copilot: *"Fix [describe the problem]"* and it will update the preview again
+
+### Step 4: Done!
+Once you approve, your changes are now live on:
+- **Live Website:** https://choogenboom1025.github.io/winter-green-coaching/
+
+---
+
 ## 📁 File Organization
 
 Here's what's in your website:
@@ -65,12 +90,21 @@ Don't worry about remembering these names—just tell Copilot what section you w
 
 ---
 
-## 🚀 Publishing Your Changes
+## 🚀 Complete Workflow Example
 
-After you make changes through Copilot:
-1. **Review** - Look at what changed to make sure it looks right
-2. **Commit** - Save your changes with a simple description
-3. **Deploy** - Your website automatically updates! (No action needed from you)
+Here's a real example of how to make a change:
+
+1. **You:** "Update the 'Services' section to add 'Virtual Coaching' as a new option, and do this on the staging branch"
+
+2. **Copilot:** Makes the changes to the staging branch
+
+3. **You:** Wait 1-2 minutes, then check https://choogenboom1025.github.io/winter-green-coaching/ to see the preview
+
+4. **You:** "The preview looks great! Publish these changes to main to make them live"
+
+5. **Copilot:** Publishes the changes
+
+6. **Done!** Your live website now shows the new service
 
 ---
 
@@ -80,25 +114,34 @@ After you make changes through Copilot:
 - Be specific: "Update the 'Services' section" is better than "Change something"
 - Be clear: Describe what you want the end result to look like
 - Ask for help: "Make this section have better spacing" or "Fix the colors"
+- **Always say:** "Make this on the staging branch first"
 
 ### If something looks wrong:
 - Tell Copilot exactly what looks wrong
-- Ask it to fix or undo the recent change
-- Don't panic—you can always revert changes!
+- Ask it to fix the staging branch and update the preview
+- Check the preview URL again
+- Don't panic—you can always ask Copilot to undo changes!
+
+### Preview Not Updating?
+- Wait 2-3 minutes after Copilot makes changes
+- Try refreshing your browser (Ctrl+F5 or Cmd+Shift+R)
+- Ask Copilot: "Did the staging changes get published?"
 
 ---
 
 ## 💡 Pro Tips
 
 ✅ **DO:**
+- Always preview on staging before publishing
 - Keep your descriptions simple and clear
 - Ask Copilot to show you a preview of changes
-- Test your website after making changes
+- Test your website after publishing changes
 - Ask Copilot questions like "What files control the color?"
 
 ❌ **DON'T:**
 - Worry about technical terms
 - Try to manually edit code if you're unsure
+- Make changes directly to main (always use staging first!)
 - Hesitate to ask Copilot to redo something
 - Change file names (let Copilot handle that)
 
