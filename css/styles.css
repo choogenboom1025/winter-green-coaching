@@ -168,15 +168,16 @@ img {
 /* ===================== HERO ===================== */
 .hero {
     position: relative;
-    min-height: 100vh;
+    height: 70vh;
     display: flex;
     align-items: flex-end;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 
     /* Hero background — replace url() with your landscape photo */
     background-image: url('../images/hero.jpg');
     background-size: cover;
-    background-position: center 35%;
+    background-position: center 50%;
+    background-attachment: fixed;
     background-color: #c8d8e8; /* fallback while image loads */
 }
 
@@ -563,6 +564,10 @@ img {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
+    .hero {
+        height: 65vh;
+    }
 }
 
 @media (max-width: 900px) {
@@ -610,6 +615,10 @@ img {
     .hero-content {
         padding: 0 32px;
         max-width: 100%;
+    }
+
+    .hero {
+        height: 60vh;
     }
 }
 
@@ -669,5 +678,21 @@ img {
 
     .contact-method {
         padding-bottom: 20px;
+    }
+
+    .hero {
+        height: 50vh;
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 45vh;
+        padding-bottom: 50px;
+    }
+
+    .hero-headline {
+        font-size: 1.6rem;
     }
 }
