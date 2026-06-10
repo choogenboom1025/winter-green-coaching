@@ -323,6 +323,86 @@ img {
     color: var(--steel);
 }
 
+/* ===================== ABOUT ===================== */
+.about {
+    background: var(--white);
+    padding: 80px 40px;
+}
+
+.about-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.about-title {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.about-intro {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--steel);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.about-section {
+    padding: 0 20px;
+}
+
+.about-section-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 16px;
+}
+
+.about-section p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--steel);
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+.about-section p:last-child {
+    margin-bottom: 0;
+}
+
+.about-philosophy {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--olive);
+    line-height: 1.8;
+    padding: 24px 0;
+    border-top: 2px solid var(--olive);
+    border-bottom: 2px solid var(--olive);
+    margin: 20px 0 !important;
+}
+
+.about-personal {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--navy);
+    font-weight: 500;
+}
+
 /* ===================== PLACEHOLDER SECTIONS ===================== */
 .section-placeholder {
     padding: 100px 40px;
@@ -738,6 +818,27 @@ img {
 
     .btn {
         text-align: center;
+    }
+
+    .about {
+        padding: 60px 24px;
+    }
+
+    .about-title {
+        font-size: 1.8rem;
+    }
+
+    .about-intro {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .about-section {
+        padding: 0;
+    }
+
+    .about-section-title {
+        font-size: 1.3rem;
     }
 
     .contact {
