@@ -168,16 +168,18 @@ img {
 /* ===================== HERO ===================== */
 .hero {
     position: relative;
-    min-height: max(70vh, 650px);
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 80px;
+    overflow: hidden;
+    background-color: #c8d8e8;
+}
 
-    /* Hero background — replace url() with your landscape photo */
-    background-image: url('../images/hero.jpg');
-    background-size: cover;
-    background-position: center 35%;
-    background-color: #c8d8e8; /* fallback while image loads */
+.hero-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 650px;
+    max-height: 90vh;
+    object-fit: cover;
+    object-position: center 35%;
 }
 
 .hero-overlay {
@@ -192,7 +194,9 @@ img {
 }
 
 .hero-content {
-    position: relative;
+    position: absolute;
+    bottom: 80px;
+    left: 0;
     z-index: 1;
     padding: 0 60px;
     max-width: 620px;
