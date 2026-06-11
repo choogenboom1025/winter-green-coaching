@@ -168,7 +168,7 @@ img {
 /* ===================== HERO ===================== */
 .hero {
     position: relative;
-    height: 70vh;
+    min-height: max(70vh, 650px);
     display: flex;
     align-items: flex-end;
     padding-bottom: 80px;
@@ -176,8 +176,7 @@ img {
     /* Hero background — replace url() with your landscape photo */
     background-image: url('../images/hero.jpg');
     background-size: cover;
-    background-position: center 50%;
-    background-attachment: fixed;
+    background-position: center 35%;
     background-color: #c8d8e8; /* fallback while image loads */
 }
 
