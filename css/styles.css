@@ -358,10 +358,29 @@ img {
     font-weight: 500;
 }
 
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 60px;
+    align-items: start;
+}
+
 .about-content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
+}
+
+.about-photo-col {
+    position: sticky;
+    top: 100px;
+}
+
+.about-photo {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+    box-shadow: 0 8px 32px rgba(29, 56, 92, 0.12);
 }
 
 .about-section {
@@ -835,6 +854,17 @@ img {
     .about-intro {
         font-size: 1rem;
         margin-bottom: 40px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .about-photo-col {
+        position: static;
+        max-width: 320px;
+        margin: 0 auto;
+        order: -1;
     }
 
     .about-section {
