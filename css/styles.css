@@ -168,6 +168,9 @@ img {
 /* ===================== HERO ===================== */
 .hero {
     position: relative;
+    height: calc(100vh - 80px);
+    min-height: 500px;
+    max-height: 900px;
     overflow: hidden;
     background-color: #c8d8e8;
 }
@@ -175,9 +178,7 @@ img {
 .hero-bg {
     display: block;
     width: 100%;
-    height: auto;
-    min-height: 650px;
-    max-height: 90vh;
+    height: 100%;
     object-fit: cover;
     object-position: center 35%;
 }
