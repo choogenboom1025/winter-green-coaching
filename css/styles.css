@@ -168,9 +168,8 @@ img {
 /* ===================== HERO ===================== */
 .hero {
     position: relative;
-    height: calc(100vh - 80px);
+    height: 100vh;
     min-height: 560px;
-    max-height: 100vh;
     overflow: hidden;
     background-color: #c8d8e8;
 }
@@ -215,7 +214,7 @@ img {
 
 .hero-headline {
     font-family: var(--font-display);
-    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
     font-weight: 600;
     line-height: 1.2;
     color: var(--navy);
