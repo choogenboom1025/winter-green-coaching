@@ -356,6 +356,18 @@ img {
     margin-bottom: 24px;
 }
 
+.about-founding {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--forest);
+    text-align: center;
+    letter-spacing: 0.04em;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.7;
+    font-style: italic;
+}
+
 .about-intro {
     font-family: var(--font-body);
     font-size: 1.1rem;
