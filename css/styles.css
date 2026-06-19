@@ -109,14 +109,14 @@ img {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 20px;
 }
 
 .nav-link {
     font-family: var(--font-body);
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     color: var(--navy);
     transition: color 0.2s;
     padding-bottom: 2px;
@@ -1248,7 +1248,7 @@ img {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
     .nav-links {
         display: none;
         position: absolute;
