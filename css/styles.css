@@ -169,8 +169,8 @@ img {
 .hero {
     position: relative;
     height: calc(100vh - 80px);
-    min-height: 500px;
-    max-height: 900px;
+    min-height: 560px;
+    max-height: 100vh;
     overflow: hidden;
     background-color: #c8d8e8;
 }
