@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Field Guide AI — Fishing & Hunting Advisor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body class="mode-fishing">
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal-overlay" id="settingsModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Setup Field Guide AI</h2>
+        <button class="modal-close" id="closeSettings">✕</button>
+      </div>
+      <p class="modal-desc">Field Guide AI uses Claude to give you real-time, location-specific fishing and hunting advice. Enter your Claude API key to get started.</p>
+      <label class="field-label">Claude API Key
+        <input type="password" id="apiKeyInput" placeholder="sk-ant-..." autocomplete="off">
+      </label>
+      <p class="modal-hint">Your key is stored only on this device. Get one free at <strong>console.anthropic.com</strong></p>
+      <button class="btn-primary" id="saveSettings">Save & Start</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="app-logo">
+        <span class="logo-icon" id="modeIcon">🎣</span>
+        <span class="logo-text">Field Guide AI</span>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="mode-toggle">
+        <button class="mode-btn active" id="fishingBtn" onclick="setMode('fishing')">🎣 Fishing</button>
+        <button class="mode-btn" id="huntingBtn" onclick="setMode('hunting')">🦌 Hunting</button>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn" id="locateBtn" title="Get my location" onclick="getLocation()">📍</button>
+      <button class="icon-btn" title="Settings" onclick="openSettings()">⚙️</button>
+    </div>
+  </header>
+
+  <!-- LOCATION BAR -->
+  <div class="location-bar" id="locationBar">
+    <span class="loc-icon">📍</span>
+    <span id="locationText">Tap 📍 to detect your location</span>
+    <span class="loc-status" id="locStatus"></span>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <main class="app-main">
+
+    <!-- LEFT: DATA PANELS -->
+    <aside class="data-sidebar">
+
+      <!-- WATER / CONDITIONS PANEL -->
+      <div class="data-card" id="waterCard">
+        <div class="card-header">
+          <span class="card-icon">💧</span>
+          <h3 class="card-title" id="waterCardTitle">Water Conditions</h3>
+          <span class="card-badge live" id="waterBadge">—</span>
+        </div>
+        <div class="data-grid" id="waterData">
+          <div class="data-item">
+            <span class="data-label">Flow Rate</span>
+            <span class="data-value" id="flowRate">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Gauge Height</span>
+            <span class="data-value" id="gaugeHeight">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Water Temp</span>
+            <span class="data-value" id="waterTemp">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Clarity</span>
+            <span class="data-value" id="waterClarity">—</span>
+          </div>
+        </div>
+        <div class="gauge-name" id="gaugeName"></div>
+      </div>
+
+      <!-- WEATHER PANEL -->
+      <div class="data-card">
+        <div class="card-header">
+          <span class="card-icon">🌤</span>
+          <h3 class="card-title">Weather</h3>
+          <span class="card-badge live" id="weatherBadge">—</span>
+        </div>
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Temperature</span>
+            <span class="data-value" id="temperature">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Wind</span>
+            <span class="data-value" id="wind">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Sky</span>
+            <span class="data-value" id="sky">—</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Barometer</span>
+            <span class="data-value" id="pressure">—</span>
+          </div>
+        </div>
+        <div class="forecast-row" id="forecastRow"></div>
+      </div>
+
+      <!-- QUICK TIPS PANEL (mode-specific) -->
+      <div class="data-card tips-card" id="tipsCard">
+        <div class="card-header">
+          <span class="card-icon" id="tipsIcon">🐟</span>
+          <h3 class="card-title" id="tipsTitle">Local Species</h3>
+        </div>
+        <div id="tipsContent" class="tips-content">
+          <p class="tips-placeholder">Detect your location to see local species and conditions.</p>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- RIGHT: AI CHAT -->
+    <section class="chat-section">
+      <div class="chat-intro" id="chatIntro">
+        <div class="intro-icon" id="introIcon">🎣</div>
+        <h2 class="intro-title">Your AI Field Guide</h2>
+        <p class="intro-text" id="introText">Tell me what you're after. Be specific — the more detail you give, the better the advice.</p>
+        <div class="prompt-chips" id="promptChips">
+          <button class="chip" onclick="useChip(this)">I'm fishing for brown trout right now</button>
+          <button class="chip" onclick="useChip(this)">What lures should I use today?</button>
+          <button class="chip" onclick="useChip(this)">Where should I cast from the bank?</button>
+          <button class="chip" onclick="useChip(this)">What time should I be on the water?</button>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chatMessages"></div>
+
+      <div class="chat-input-area">
+        <div class="chat-input-row">
+          <textarea
+            id="chatInput"
+            class="chat-input"
+            placeholder="Ask your field guide anything..."
+            rows="1"
+            onkeydown="handleKey(event)"
+            oninput="autoResize(this)"
+          ></textarea>
+          <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+            <span>↑</span>
+          </button>
+        </div>
+        <p class="chat-footer">Combines live USGS water data, NOAA weather, and AI to give you specific, real-time advice.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
